@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-inherit autotools eutils xdg-utils gnome2-utils toolchain-funcs
+inherit autotools eutils xdg-utils gnome2-utils toolchain-funcs desktop
 
 DESCRIPTION="A flexible, modular Printed Circuit Board editor"
 HOMEPAGE="http://repo.hu/projects/pcb-rnd/"
@@ -122,6 +122,8 @@ src_install() {
 		mv ${D}/usr/share/doc/${PN}/* ${D}/usr/share/doc/${PF}/ || die
 		rmdir ${D}/usr/share/doc/${PN} || die
 	fi
+
+	make_desktop_entry pcb-rnd PCB-rnd pcb "Engineering;Electronics"
 }
 
 pkg_preinst() {
