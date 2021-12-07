@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,7 +11,7 @@ SRC_URI="http://repo.hu/projects/pcb-rnd/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-macos"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="dbus debug doc gcode gif gtk jpeg m4lib-png motif nelma opengl png
 test tk toporouter xrender"
 # toporouter-output USE flag removed, there seems to be no result
@@ -118,9 +118,9 @@ src_install() {
 	default
 
 	# move doc files to the right directory (FHS policy warning)
-	if [ -d ${D}/usr/share/doc/${PN} ]; then
-		mv ${D}/usr/share/doc/${PN}/* ${D}/usr/share/doc/${PF}/ || die
-		rmdir ${D}/usr/share/doc/${PN} || die
+	if [ -d "${D}/usr/share/doc/${PN}" ]; then
+		mv "${D}/usr/share/doc/${PN}/*" "${D}/usr/share/doc/${PF}/" || die
+		rmdir "${D}/usr/share/doc/${PN}" || die
 	fi
 
 	make_desktop_entry pcb-rnd PCB-rnd pcb "Engineering;Electronics"
