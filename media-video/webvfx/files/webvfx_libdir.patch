@@ -1,9 +1,0 @@
---- webvfx/webvfx.pro.orig	2019-12-23 10:40:17.967088132 -0500
-+++ webvfx/webvfx.pro	2019-12-23 10:41:17.191700702 -0500
-@@ -47,5 +47,5 @@
- 
- TARGET = webvfx
- 
--target.path = $$PREFIX/lib
-+target.path = $$PREFIX/$$LIBDIR/mlt
- INSTALLS += target
