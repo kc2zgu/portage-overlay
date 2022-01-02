@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
@@ -48,6 +48,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}/avrxmega3-v12.patch"
+
 	epatch_user #455828
 
 	# work around broken gcc versions PR45261
