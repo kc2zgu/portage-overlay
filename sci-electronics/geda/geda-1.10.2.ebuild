@@ -1,15 +1,15 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-inherit autotools eutils xdg-utils gnome2-utils versionator
+EAPI=7
+inherit autotools eutils xdg-utils gnome2-utils
 
 MY_PN=${PN}-gaf
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="GPL Electronic Design Automation (gEDA):gaf core package"
 HOMEPAGE="http://wiki.geda-project.org/geda:gaf"
-SRC_URI="http://ftp.geda-project.org/${MY_PN}/stable/v$(get_version_component_range 1-2)/${PV}/${MY_P}.tar.gz"
+SRC_URI="http://ftp.geda-project.org/${MY_PN}/stable/v$(ver_cut 1-2)/${PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -43,7 +43,7 @@ S=${WORKDIR}/${MY_P}
 
 DOCS="AUTHORS NEWS README"
 
-PATCHES=( "${FILESDIR}"/${P}-maybe-uninitialized.patch )
+PATCHES=( "${FILESDIR}"/${PN}-1.10.0-maybe-uninitialized.patch )
 
 src_prepare() {
 	default
