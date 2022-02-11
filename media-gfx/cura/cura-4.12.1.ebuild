@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -54,10 +54,15 @@ src_prepare() {
 
 src_configure() {
 	# trimesh not available in portage
+	local PLUGINS_DISABLED="AMFReader;TrimeshReader"
+	if use !usb; then
+		PLUGINS_DISABLED="${PLUGINS_DISABLED};USBPrinting"
+	fi
+
 	local mycmakeargs=(
 	  -DCURA_BUILDTYPE="ebuild"
 	  -DCURA_VERSION=${PV}
-		-DCURA_NO_INSTALL_PLUGINS="AMFReader;Toolbox;TrimeshReader"
+		-DCURA_NO_INSTALL_PLUGINS=${PLUGINS_DISABLED}
 		-DCURA_DEBUGMODE=$(usex debug)
 	)
 	cmake_src_configure
