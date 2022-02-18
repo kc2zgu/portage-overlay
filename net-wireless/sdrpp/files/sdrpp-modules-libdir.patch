@@ -1,0 +1,32 @@
+diff --git a/core/CMakeLists.txt b/core/CMakeLists.txt
+index 5a37ca1..1f5b7fb 100644
+--- a/core/CMakeLists.txt
++++ b/core/CMakeLists.txt
+@@ -121,8 +121,14 @@ else()
+ 
+ endif ()
+ 
++if (DEFINED CMAKE_INSTALL_LIBDIR)
++    add_definitions("-DLIBDIR=\"${CMAKE_INSTALL_LIBDIR}\"")
++else()
++    add_definitions("-DLIBDIR=\"lib\"")
++endif()
++
+ set(CORE_FILES ${RUNTIME_OUTPUT_DIRECTORY} PARENT_SCOPE)
+ 
+ # cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
+ 
+ # Install directives
+diff --git a/core/src/core.cpp b/core/src/core.cpp
+index a8d0c8f..4c2b40a 100644
+--- a/core/src/core.cpp
++++ b/core/src/core.cpp
+@@ -258,7 +258,7 @@ int sdrpp_main(int argc, char* argv[]) {
+     defConfig["modulesDirectory"] = "../Plugins";
+     defConfig["resourcesDirectory"] = "../Resources";
+ #else
+-    defConfig["modulesDirectory"] = INSTALL_PREFIX "/lib/sdrpp/plugins";
++    defConfig["modulesDirectory"] = INSTALL_PREFIX "/" LIBDIR "/sdrpp/plugins";
+     defConfig["resourcesDirectory"] = INSTALL_PREFIX "/share/sdrpp";
+ #endif
+ 
