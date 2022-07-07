@@ -4,20 +4,20 @@
 
 EAPI=8
 
-DIST_AUTHOR="PEVANS"
-DIST_VERSION="0.04"
+MODULE_AUTHOR="SYBER"
+MODULE_VERSION="3.0.0.4"
 
 
 inherit perl-module
 
-DESCRIPTION="C<Commandable::Invocation> - represents one invocation of a CLI command"
+DESCRIPTION="Catch test library for XS"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Module-Build
-	dev-perl/Test-Warnings
-	dev-perl/Module-Pluggable
+DEPEND=">=perl-gcpan/XS-Install-1.2.16
+	perl-gcpan/Alien-cmake3
+	dev-perl/Test-Deep
 	dev-lang/perl"

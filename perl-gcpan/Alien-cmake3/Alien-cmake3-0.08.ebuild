@@ -4,20 +4,22 @@
 
 EAPI=8
 
-DIST_AUTHOR="PEVANS"
-DIST_VERSION="0.04"
+DIST_AUTHOR="PLICEASE"
+DIST_VERSION="0.08"
 
 
 inherit perl-module
 
-DESCRIPTION="C<Commandable::Invocation> - represents one invocation of a CLI command"
+DESCRIPTION="Find or download or build cmake 3 or better"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Module-Build
-	dev-perl/Test-Warnings
-	dev-perl/Module-Pluggable
+DEPEND="dev-perl/Path-Tiny
+	dev-perl/File-Which
+	dev-perl/Capture-Tiny
+	>=dev-perl/Alien-Build-2.480.0
+	dev-perl/Test2-Suite
 	dev-lang/perl"

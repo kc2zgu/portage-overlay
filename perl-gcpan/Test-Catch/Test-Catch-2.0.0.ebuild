@@ -4,20 +4,20 @@
 
 EAPI=8
 
-DIST_AUTHOR="PEVANS"
-DIST_VERSION="0.04"
+DIST_AUTHOR="SYBER"
+DIST_VERSION="2.0.0"
 
 
 inherit perl-module
 
-DESCRIPTION="C<Commandable::Invocation> - represents one invocation of a CLI command"
+DESCRIPTION="Run C++ catch tests from perl test file"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Module-Build
-	dev-perl/Test-Warnings
-	dev-perl/Module-Pluggable
+DEPEND="dev-perl/Test-Deep
+	>=perl-gcpan/XS-Install-1.2.16
+	perl-gcpan/XS-libcatch
 	dev-lang/perl"
