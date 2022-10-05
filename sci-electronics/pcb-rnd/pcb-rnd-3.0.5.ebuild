@@ -1,13 +1,13 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="7"
 
-inherit autotools eutils xdg-utils gnome2-utils toolchain-funcs
+inherit autotools eutils xdg-utils gnome2-utils toolchain-funcs desktop
 
 DESCRIPTION="A flexible, modular Printed Circuit Board editor"
 HOMEPAGE="http://repo.hu/projects/pcb-rnd/"
-SRC_URI="http://repo.hu/projects/pcb-rnd/releases/${P}.tar.bz2"
+SRC_URI="http://repo.hu/projects/${PN}/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -33,7 +33,8 @@ CDEPEND="dev-libs/glib:2
 	virtual/libintl
 	png? ( media-libs/gd[png] )
 	m4lib-png? ( media-libs/gd[png] )
-	tk? ( >=dev-lang/tk-8:0 )"
+	tk? ( >=dev-lang/tk-8:0 )
+	>=sci-libs/librnd-3.1.0"
 #toporouter-output? ( x11-libs/cairo )
 
 DEPEND="${CDEPEND}
@@ -69,6 +70,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	default
+
 	if use test; then
 		# adapt the list of tests to run according to USE flag settings
 		if ! use png; then
@@ -85,12 +88,12 @@ src_prepare() {
 
 src_configure() {
 	local myconf
-	if ! use gtk ; then
-		myconf="--disable-hid_gtk2_gdk --disable-hid_gtk2_gl --disable-hid_gtk3_cairo"
-		fi
-	if ! use motif ; then
-		myconf="--disable-hid_lesstif"
-	fi
+	#if ! use gtk ; then
+	#	myconf="--disable-hid_gtk2_gdk --disable-hid_gtk2_gl --disable-hid_gtk3_cairo"
+	#	fi
+	#if ! use motif ; then
+	#	myconf="--disable-hid_lesstif"
+	#fi
 
 	local exporters="bom gerber ps ipcd356"
 	if (use png || use jpeg || use gif) ; then
@@ -103,13 +106,25 @@ src_configure() {
 	use tk || export WISH="${EPREFIX}/bin/true"
 
 	./configure \
-		--prefix=/usr ${myconf}
+		--prefix=/usr ${myconf} --libarchdir=$(get_libdir)
 }
 # toporouter-output USE flag removed, there seems to be no result
 #		$(use_enable toporouter-output) \
 
 src_compile() {
 	emake AR="$(tc-getAR)"
+}
+
+src_install() {
+	default
+
+	# move doc files to the right directory (FHS policy warning)
+	#if [ -d "${D}/usr/share/doc/${PN}" ]; then
+	#	mv "${D}/usr/share/doc/${PN}/*" "${D}/usr/share/doc/${PF}/" || die
+	#	rmdir "${D}/usr/share/doc/${PN}" || die
+	#fi
+
+	make_desktop_entry pcb-rnd PCB-rnd pcb "Engineering;Electronics"
 }
 
 pkg_preinst() {
