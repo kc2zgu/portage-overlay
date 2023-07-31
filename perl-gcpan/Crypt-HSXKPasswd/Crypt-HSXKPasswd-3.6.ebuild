@@ -4,8 +4,8 @@
 
 EAPI=8
 
-MODULE_AUTHOR="BARTB"
-MODULE_VERSION="v3.6"
+DIST_AUTHOR="BARTB"
+DIST_VERSION="v3.6"
 
 
 inherit perl-module

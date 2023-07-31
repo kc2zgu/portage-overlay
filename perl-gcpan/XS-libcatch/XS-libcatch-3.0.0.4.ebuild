@@ -4,8 +4,8 @@
 
 EAPI=8
 
-MODULE_AUTHOR="SYBER"
-MODULE_VERSION="3.0.0.4"
+DIST_AUTHOR="SYBER"
+DIST_VERSION="3.0.0.4"
 
 
 inherit perl-module

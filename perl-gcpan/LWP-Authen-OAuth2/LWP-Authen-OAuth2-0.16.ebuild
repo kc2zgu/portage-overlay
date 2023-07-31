@@ -4,8 +4,8 @@
 
 EAPI=8
 
-MODULE_AUTHOR="DOMM"
-MODULE_VERSION="0.16"
+DIST_AUTHOR="DOMM"
+DIST_VERSION="0.16"
 
 
 inherit perl-module
