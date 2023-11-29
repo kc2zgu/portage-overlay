@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -6,7 +6,7 @@ EAPI="7"
 CHOST="avr"
 CTARGET="avr"
 
-inherit flag-o-matic eutils subversion
+inherit flag-o-matic git-r3
 
 DESCRIPTION="C library for Atmel AVR microcontrollers"
 HOMEPAGE="http://www.nongnu.org/avr-libc/"
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.nongnu.org/avr-libc/"
 #	https://savannah.nongnu.org/download/avr-libc/${PN}-manpages-${PV}.tar.bz2
 #	doc? ( https://savannah.nongnu.org/download/avr-libc/${PN}-user-manual-${PV}.tar.bz2 )"
 
-ESVN_REPO_URI="svn://svn.savannah.nongnu.org/avr-libc/trunk/avr-libc"
+EGIT_REPO_URI="https://github.com/avrdudes/avr-libc.git"
 
 LICENSE="BSD"
 SLOT="0"
@@ -29,7 +29,7 @@ DEPEND=">=sys-devel/crossdev-0.9.1"
 	&& RDEPEND="!dev-embedded/avr-libc" \
 	|| RDEPEND=""
 
-DOCS="AUTHORS ChangeLog* NEWS README"
+DOCS="AUTHORS NEWS README.md"
 
 pkg_setup() {
 	# check for avr-gcc, bug #134738
@@ -50,7 +50,7 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}/avrxmega3-v12.patch"
 
-	epatch_user #455828
+	eapply_user #455828
 
 	# work around broken gcc versions PR45261
 	local mcu
