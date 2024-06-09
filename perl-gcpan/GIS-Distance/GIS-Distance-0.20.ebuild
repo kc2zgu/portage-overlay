@@ -22,6 +22,5 @@ DEPEND=">=dev-perl/Module-Build-Tiny-0.46.0
 	>=dev-perl/Const-Fast-0.14.0
 	>=perl-core/Test2-Suite-0.0.155
 	dev-perl/strictures
-	perl-gcpan/GIS-Distance-Fast
 	dev-perl/Module-Build
 	dev-lang/perl"

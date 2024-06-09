@@ -4,21 +4,19 @@
 
 EAPI=8
 
-DIST_AUTHOR="PLICEASE"
-DIST_VERSION="0.08"
+DIST_AUTHOR="PEVANS"
+DIST_VERSION="0.14"
 
 inherit perl-module
 
-DESCRIPTION="Find or download or build cmake 3 or better"
+DESCRIPTION="C<Syntax::Keyword::Match> - a C<match/case> syntax for perl"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Path-Tiny
-	dev-perl/File-Which
-	dev-perl/Capture-Tiny
-	>=dev-perl/Alien-Build-2.480.0
-	perl-core/Test2-Suite
+DEPEND=">=dev-perl/XS-Parse-Keyword-0.42
+	dev-perl/Module-Build
+	virtual/perl-Test2-Suite
 	dev-lang/perl"

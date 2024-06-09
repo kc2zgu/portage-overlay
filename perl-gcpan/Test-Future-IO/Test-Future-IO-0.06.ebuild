@@ -4,21 +4,22 @@
 
 EAPI=8
 
-DIST_AUTHOR="PLICEASE"
-DIST_VERSION="0.08"
+DIST_AUTHOR="PEVANS"
+DIST_VERSION="0.06"
 
 inherit perl-module
 
-DESCRIPTION="Find or download or build cmake 3 or better"
+DESCRIPTION="C<Test::Future::IO> - unit testing on C<Future::IO>"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Path-Tiny
-	dev-perl/File-Which
-	dev-perl/Capture-Tiny
-	>=dev-perl/Alien-Build-2.480.0
-	perl-core/Test2-Suite
+DEPEND=">=dev-perl/Test-ExpectAndCheck-0.06
+	virtual/perl-Test2-Suite
+	dev-perl/Module-Build
+	perl-gcpan/Future-Buffer
+	dev-perl/Test-Deep
+	dev-perl/Future-IO
 	dev-lang/perl"
