@@ -5,20 +5,18 @@
 EAPI=8
 
 DIST_AUTHOR="PEVANS"
-DIST_VERSION="0.05"
+DIST_VERSION="0.06"
 
 inherit perl-module
 
-DESCRIPTION="C<Test::Future::IO> - unit testing on C<Future::IO>"
+DESCRIPTION="C<Object::Pad::ClassAttr::Struct> - declare an C<Object::Pad> class to be struct-like"
 
 LICENSE="|| ( Artistic GPL-1 GPL-2 GPL-3 )"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-perl/Module-Build
-	dev-perl/Test-ExpectAndCheck
-	perl-gcpan/Future-Buffer
-	dev-perl/Test-Deep
-	dev-perl/Future-IO
+DEPEND="virtual/perl-Test2-Suite
+	dev-perl/Module-Build
+	dev-perl/Object-Pad
 	dev-lang/perl"
