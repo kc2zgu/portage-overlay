@@ -17,6 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="virtual/perl-Test2-Suite
+DEPEND="virtual/perl-Test-Simple
+
 	dev-perl/Module-Build
 	dev-lang/perl"

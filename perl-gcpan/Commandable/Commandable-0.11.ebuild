@@ -20,5 +20,6 @@ IUSE=""
 DEPEND="dev-perl/Module-Build
 	dev-perl/Module-Pluggable
 	dev-perl/Test-NoWarnings
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-lang/perl"

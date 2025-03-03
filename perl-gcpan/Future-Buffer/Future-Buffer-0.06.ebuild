@@ -18,5 +18,6 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-perl/Module-Build
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-lang/perl"

@@ -23,7 +23,8 @@ DEPEND=">=perl-gcpan/Object-Pad-ClassAttr-Struct-0.06
 	dev-perl/Future-IO
 	perl-gcpan/Commandable
 	dev-perl/Object-Pad
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	perl-gcpan/Future-AsyncAwait
 	dev-perl/Module-Build
 	dev-perl/Test-ExpectAndCheck

@@ -19,6 +19,7 @@ IUSE=""
 DEPEND=">=dev-perl/XS-Parse-Keyword-0.42
 	dev-perl/Future
 	dev-perl/Module-Build
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	>=dev-perl/XS-Parse-Sublike-0.21
 	dev-lang/perl"

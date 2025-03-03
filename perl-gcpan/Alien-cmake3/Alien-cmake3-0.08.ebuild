@@ -20,5 +20,6 @@ DEPEND="dev-perl/Path-Tiny
 	dev-perl/File-Which
 	dev-perl/Capture-Tiny
 	>=dev-perl/Alien-Build-2.480.0
-	perl-core/Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-lang/perl"

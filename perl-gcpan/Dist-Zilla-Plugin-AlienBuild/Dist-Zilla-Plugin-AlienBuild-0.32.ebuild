@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-perl/Alien-Build-2.420.0
-	>=perl-core/Test2-Suite-0.0.141
+	virtual/perl-Test-Simple
 	dev-perl/Sub-Exporter-ForMethods
 	dev-perl/Moose
 	dev-perl/YAML

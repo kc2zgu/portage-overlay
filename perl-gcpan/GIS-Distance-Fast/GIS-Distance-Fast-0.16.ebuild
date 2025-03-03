@@ -20,6 +20,6 @@ DEPEND=">=dev-perl/namespace-clean-0.270.0
 	dev-perl/strictures
 	>=perl-gcpan/GIS-Distance-0.20
 	dev-perl/Module-Build
-	>=perl-core/Test2-Suite-0.0.155
+	virtual/perl-Test-Simple
 	>=dev-perl/Module-Build-Tiny-0.46.0
 	dev-lang/perl"

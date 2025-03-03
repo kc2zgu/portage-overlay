@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="virtual/perl-Test2-Suite
+DEPEND="virtual/perl-Test-Simple
+
 	dev-perl/List-UtilsBy
 	>=dev-perl/Struct-Dumb-0.14
 	dev-perl/Module-Pluggable

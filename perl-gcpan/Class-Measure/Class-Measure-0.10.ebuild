@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-perl/Module-Build-Tiny-0.46.0
-	>=perl-core/Test2-Suite-0.0.155
+	virtual/perl-Test-Simple
 	>=dev-perl/Sub-Exporter-0.989.0
 	dev-perl/Module-Build
 	dev-lang/perl"

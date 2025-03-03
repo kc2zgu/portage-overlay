@@ -20,7 +20,7 @@ DEPEND=">=dev-perl/Module-Build-Tiny-0.46.0
 	>=dev-perl/namespace-clean-0.270.0
 	perl-gcpan/Class-Measure
 	>=dev-perl/Const-Fast-0.14.0
-	>=perl-core/Test2-Suite-0.0.155
+	virtual/perl-Test-Simple
 	dev-perl/strictures
 	dev-perl/Module-Build
 	dev-lang/perl"

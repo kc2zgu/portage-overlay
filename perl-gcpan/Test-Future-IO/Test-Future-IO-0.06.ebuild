@@ -17,7 +17,8 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-perl/Test-ExpectAndCheck-0.06
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-perl/Module-Build
 	perl-gcpan/Future-Buffer
 	dev-perl/Test-Deep

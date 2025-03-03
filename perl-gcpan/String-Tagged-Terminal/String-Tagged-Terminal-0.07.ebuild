@@ -21,5 +21,6 @@ DEPEND="dev-perl/Module-Build
 	perl-gcpan/Convert-Color-XTerm
 	dev-perl/Convert-Color
 	perl-gcpan/String-Tagged
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-lang/perl"

@@ -20,7 +20,8 @@ DEPEND="perl-gcpan/Future-Buffer
 	dev-perl/Module-Build
 	>=dev-perl/Object-Pad-0.808
 	dev-perl/Test-ExpectAndCheck
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	>=perl-gcpan/Future-AsyncAwait-0.66
 	>=perl-gcpan/Object-Pad-ClassAttr-Struct-0.06
 	dev-lang/perl"

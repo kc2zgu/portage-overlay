@@ -18,5 +18,6 @@ IUSE=""
 
 DEPEND=">=dev-perl/XS-Parse-Keyword-0.42
 	dev-perl/Module-Build
-	virtual/perl-Test2-Suite
+	virtual/perl-Test-Simple
+
 	dev-lang/perl"
